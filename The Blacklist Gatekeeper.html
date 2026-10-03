@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript for Cyber Security</title>
+</head>
+<body>
+
+    <label>Who are you?</label><br>
+    <input type="text" id="identity">
+    <button type="button" onclick="who_check();">Submit</button>
+
+</body>
+
+<script>
+    let whitelist = ["admin","superuser","root","test"]
+    function who_check(){
+        let user = document.getElementById("identity").value.toLowerCase();
+        if(whitelist.includes(user)){
+            alert("Access Granted " + user+"!");
+        }
+        else{
+            alert("No entry " + user+"!");
+        }
+    };
+</script>
+
+</html>
