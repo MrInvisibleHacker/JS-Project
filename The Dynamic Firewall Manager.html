@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript for Cyber Security</title>
+</head>
+
+
+<body>
+    <Label>Check if u are in whitelist:</Label>
+    <input type="text" id="checkuser"><button type="button" onclick="check_user();">Submit</button><br><br><br>
+
+    <label>Enter ur name to ad in whitelist:</label> <input type="text" id="addwhitelist"><button type="submit" onclick="add_whitelist();">Submit</button>
+</body>
+
+
+
+<script>
+    let whitelistuser = ["admin","root","home"]
+   
+   function check_user(){
+    let user = document.getElementById("checkuser").value.toLowerCase();
+    
+    if(whitelistuser.includes(user)){
+        alert("u are already existing in whitelist")
+    }
+    else{
+        alert(" u are not existing in whitelist. To add in white list, enter ur name below the input box")
+    }
+   };
+
+   function add_whitelist(){
+    let adduser = document.getElementById("addwhitelist").value.toLowerCase();
+    whitelistuser.push(adduser);
+    alert("U have been added to whitelist");
+    alert(whitelistuser);
+   }
+
+</script>
+
+</html>
